@@ -1,7 +1,10 @@
 package com.sikiapp.redis.model;
 
 import lombok.Data;
+import tk.mybatis.mapper.annotation.KeySql;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 @Data
@@ -9,6 +12,8 @@ public class UserAuth implements Serializable {
     /**
      * 自增Id
      */
+    @Id
+    @GeneratedValue(generator = "JDBC")
     private Integer id;
 
     /**

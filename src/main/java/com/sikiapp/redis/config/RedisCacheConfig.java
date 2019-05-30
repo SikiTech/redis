@@ -1,7 +1,7 @@
 /**
  * projectName: spring-boot-in-action
  * fileName: RedisCacheConfig.java
- * packageName: com.sikiapp.springbootinaction.redis
+ * packageName: com.sikiapp.redis.redis
  * date: 2019-05-28 上午11:01
  * copyright(c) 2018-2028 深圳识迹科技有限公司
  */
@@ -15,14 +15,14 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @className: RedisCacheConfig
- * @packageName: com.sikiapp.springbootinaction.redis
+ * @packageName: com.sikiapp.redis.redis
  * @description: Redis 缓存配置
  * @author: Robert
  * @data: 2019-05-28 上午11:01
  * @version: V1.0
  **/
-@Configuration
-@EnableCaching
+//@Configuration
+//@EnableCaching
 public class RedisCacheConfig extends CachingConfigurerSupport {
 
     @Bean

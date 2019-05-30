@@ -24,7 +24,7 @@
     </appender>
 
     <logger name="org.springframework">
-        <level value="WARN"/>
+        <level value="DEBUG"/>
     </logger>
     <logger name="org.apache.shiro">
         <level value="WARN"/>
@@ -38,27 +38,21 @@
     <logger name="org.hibernate.SQL">
         <level value="DEBUG"/>
     </logger>
-    <logger name="c.s.s">
-        <level value="INFO"/>
-    </logger>
     <logger name="io.lettuce.core">
         <level value="INFO"/>
     </logger>
-    <logger name="reactor.netty">
-        <level value="INFO"/>
-    </logger>
-    <logger name="com.sikiapp.springbootinaction.logger" level="DEBUG" additivity="false">
+    <logger name="com.sikiapp.redis.logger" level="DEBUG" additivity="false">
         <appender-ref ref="console"/>
     </logger>
 
     <springProfile name="test,dev">
-        <logger name="com.sikiapp.springbootinaction.logger" level="info" />
+        <logger name="com.sikiapp.redis.logger" level="info" />
         <root level="DEBUG">
             <appender-ref ref="console"/>
         </root>
     </springProfile>
     <springProfile name="prod">
-        <logger name="com.sikiapp.springbootinaction.logger" level="ERROR" />
+        <logger name="com.sikiapp.redis.logger" level="ERROR" />
         <root level="INFO">
             <appender-ref ref="console"/>
             <appender-ref ref="file"/>

@@ -1,7 +1,7 @@
 /**
  * projectName: spring-boot-in-action
  * fileName: Groups.java
- * packageName: com.sikiapp.springbootinaction.annotation
+ * packageName: com.sikiapp.redis.annotation
  * date: 2019-05-25 下午4:08
  * copyright(c) 2018-2028 深圳识迹科技有限公司
  */
@@ -9,7 +9,7 @@ package com.sikiapp.redis.annotation;
 
 /**
  * @className: Groups
- * @packageName: com.sikiapp.springbootinaction.annotation
+ * @packageName: com.sikiapp.redis.annotation
  * @description: 验证组 (只需要定义空接口即可)
  * @author: Robert
  * @data: 2019-05-25 下午4:08

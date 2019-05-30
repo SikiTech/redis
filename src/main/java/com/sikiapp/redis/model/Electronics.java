@@ -1,7 +1,7 @@
 /**
  * projectName: spring-boot-in-action
  * fileName: Electronics.java
- * packageName: com.sikiapp.springbootinaction.com.sikiapp.redis.model
+ * packageName: com.sikiapp.redis.com.sikiapp.redis.model
  * date: 2019-05-25 上午11:15
  * copyright(c) 2018-2028 深圳识迹科技有限公司
  */
@@ -19,7 +19,7 @@ import java.math.BigDecimal;
 
 /**
  * @className: Electronics
- * @packageName: com.sikiapp.springbootinaction.com.sikiapp.redis.model
+ * @packageName: com.sikiapp.redis.com.sikiapp.redis.model
  * @description: 电子产品
  * @author: Robert
  * @data: 2019-05-25 上午11:15
