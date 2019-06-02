@@ -9,8 +9,8 @@ package com.sikiapp.redis.web;
 
 import com.sikiapp.redis.Exception.ErrorResponseEntity;
 import com.sikiapp.redis.mapper.UserAuthMapper;
-import com.sikiapp.redis.model.User;
-import com.sikiapp.redis.model.UserAuth;
+import com.sikiapp.redis.entity.User;
+import com.sikiapp.redis.entity.UserAuth;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,24 +34,25 @@ public class UserController {
 
     @RequestMapping("/getUser")
     public User getUser() {
-        User user = new User("robert", "男", 28);
+        User user = User.builder().id(123L).username("robert").build();
         return user;
     }
 
     @RequestMapping("/auths")
     public List<UserAuth> getAuth() {
-        return userAuthMapper.selectByUserBaseId(1196);
+//        return userAuthMapper.selectByUserBaseId(1196);
+        return null;
     }
 
     @RequestMapping("/save")
     public String insetAuth() {
         UserAuth userAuth = new UserAuth();
         userAuth.setUser(1196);
-        userAuth.setIdentityType((byte)2);
+//        userAuth.setIdentityType((byte)2);
         userAuth.setIdentifier("tokenxxxxxx");
-        int i = userAuthMapper.insertSelective(userAuth);
+        int i = userAuthMapper.insert(userAuth);
 
-        System.out.println(userAuth.getId());
+//        System.out.println(userAuth.getId());
         return "success";
     }
 
@@ -59,6 +60,7 @@ public class UserController {
     public ErrorResponseEntity cumstEx() {
         return new ErrorResponseEntity(400, "自定义错误");
     }
+
 
 
 

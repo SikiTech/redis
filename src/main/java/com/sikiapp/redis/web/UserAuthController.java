@@ -7,7 +7,7 @@
  */
 package com.sikiapp.redis.web;
 
-import com.sikiapp.redis.model.UserAuth;
+import com.sikiapp.redis.entity.UserAuth;
 import com.sikiapp.redis.service.UserAuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,21 +31,27 @@ public class UserAuthController {
 
     @GetMapping("/one")
     public UserAuth selectByIdentifier(Integer id) {
-        return userAuthService.getOne(id);
+//        return userAuthService.getOne(id);
+        return null;
     }
 
     @GetMapping("/identifier")
     public UserAuth selectByIdentifier(String identifier, String certificate, Byte identityType) {
-        return userAuthService.selectByIdentifier(identifier, certificate, identityType);
+//        return userAuthService.selectByIdentifier(identifier, certificate, identityType);
+        return null;
     }
 
     @GetMapping("/modify")
     public UserAuth updatePasswordByPhone(String identifier, String certificate) throws Exception {
-        return userAuthService.updatePasswordByPhone(identifier, certificate);
+//        return userAuthService.updatePasswordByPhone(identifier, certificate);
+        return null;
     }
 
     @GetMapping("/del")
     public int deleteUserAuth(Integer id) {
-        return userAuthService.deleteUserAuth(id);
+//        return userAuthService.deleteUserAuth(id);
+        return 0;
     }
+
+
 }

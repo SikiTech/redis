@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sikiapp.redis.mapper.StoreMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.sikiapp.redis.entity.Store">
+    <result column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="tasty" property="tasty" />
+        <result column="service" property="service" />
+        <result column="speed" property="speed" />
+        <result column="combine" property="combine" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        name, tasty, service, speed, combine
+    </sql>
+
+</mapper>

@@ -1,54 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sikiapp.redis.mapper.UserAuthMapper">
-    <resultMap id="BaseResultMap" type="com.sikiapp.redis.model.UserAuth">
-        <id column="id" jdbcType="INTEGER" property="id" />
-        <result column="user" jdbcType="INTEGER" property="user" />
-        <result column="identity_type" jdbcType="TINYINT" property="identityType" />
-        <result column="identifier" jdbcType="VARCHAR" property="identifier" />
-        <result column="certificate" jdbcType="VARCHAR" property="certificate" />
-        <result column="name" jdbcType="VARCHAR" property="name" />
-        <result column="gender" jdbcType="VARCHAR" property="gender" />
-        <result column="face" jdbcType="VARCHAR" property="face" />
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.sikiapp.redis.entity.UserAuth">
+    <result column="id" property="id" />
+        <result column="user" property="user" />
+        <result column="identity_type" property="identityType" />
+        <result column="identifier" property="identifier" />
+        <result column="certificate" property="certificate" />
+        <result column="name" property="name" />
+        <result column="gender" property="gender" />
+        <result column="face" property="face" />
+        <result column="order" property="order" />
     </resultMap>
 
+    <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, `user`, identity_type, identifier, certificate, `name`, gender, face
+        id,
+        user, identity_type, identifier, certificate, name, gender, face, order
     </sql>
-
-    <select id="selectByUserBaseId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List" />
-        from user_auth
-        where user = #{userBaseId,jdbcType=INTEGER}
-    </select>
-
-    <select id="selectByIdentifier" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List" />
-        from user_auth
-        <where>
-            <if test="identityType != null">
-                and identity_type = #{identityType,jdbcType=TINYINT}
-            </if>
-            <if test="identifier != null and identifier !=''">
-                and identifier = #{identifier,jdbcType=VARCHAR}
-            </if>
-            <if test="certificate != null and certificate != ''">
-                and certificate = #{certificate,jdbcType=VARCHAR}
-            </if>
-        </where>
-    </select>
-
-    <update id="updatePasswordByPhone" parameterType="java.lang.String">
-        update user_auth
-        <set>
-            <if test="certificate != null">
-                certificate = #{certificate,jdbcType=VARCHAR},
-            </if>
-        </set>
-        where identifier = #{identifier,jdbcType=VARCHAR}
-    </update>
-
 
 </mapper>
