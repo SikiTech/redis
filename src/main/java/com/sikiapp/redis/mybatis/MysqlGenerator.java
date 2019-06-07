@@ -116,12 +116,12 @@ public class MysqlGenerator {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-//        strategy.setSuperEntityClass("com.sikiapp.redis.generator.common.BaseEntity");
+        strategy.setSuperEntityClass("com.sikiapp.redis.entity.BaseEntity");
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
-//        strategy.setSuperControllerClass("com.sikiapp.redis.generator.common.BaseController");
-//        strategy.setInclude(scanner("表名"));
+        strategy.setSuperControllerClass("com.sikiapp.redis.controller.BaseController");
         strategy.setSuperEntityColumns("id");
+
         strategy.setInclude("app_rating", "attractions", "book", "business_area", "chat_group","consume_coupon","consume_order","conversation_list","coupon_pick_log","cuisine_detail","cuisine_type","discount","foot_mark","foot_match","friend_invited","hibernate_sequence","interest","interest_type","invitation","invitation_gift","join_group","mark_attraction","mark_evaluation","member_evaluation","merchant_cooperation","merchant_feedback","merchant_withdraw","my_invited","open_link_statics","permission","qiniu_token","question","red_packet","red_packet_log","role","role_permission","rong_token","store","store_auth","store_base","store_cuisine","store_evaluation","store_gift","store_group","store_location","theme_activity","theme_join","user_auth","user_base","user_blacklist","user_contact","user_coupon","user_extra","user_feedback","user_interest","user_job","user_location","user_login_log","user_operation_log","user_prefer","user_question","user_report","user_role","user_search_log");
         strategy.setControllerMappingHyphenStyle(true);
 //        strategy.setTablePrefix(pc.getModuleName() + "_");

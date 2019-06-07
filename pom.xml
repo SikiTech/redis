@@ -62,10 +62,10 @@
             <version>${mybatis-plus}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-pool2</artifactId>
-            <version>2.0</version>
-        </dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-pool2</artifactId>
+        <version>2.0</version>
+    </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>

@@ -7,18 +7,11 @@
  */
 package com.sikiapp.redis.manager;
 
-import com.sikiapp.redis.mapper.UserAuthMapper;
-import com.sikiapp.redis.entity.UserAuth;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.dao.DataAccessException;
-import org.springframework.data.redis.core.RedisOperations;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.SessionCallback;
-
-import java.util.List;
 
 /**
  * @className: StoreStartupRunner
@@ -36,22 +29,22 @@ public class StoreStartupRunner implements CommandLineRunner {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    @Autowired
-    private UserAuthMapper userAuthMapper;
+//    @Autowired
+//    private UserAuthMapper userAuthMapper;
 
     @Override
     public void run(String... args) throws Exception {
-        List<UserAuth> auths = userAuthMapper.selectList(null);
-
-        redisTemplate.executePipelined(new SessionCallback() {
-            @Override
-            public Object execute(RedisOperations ro) throws DataAccessException {
-                auths.forEach(action -> {
-//                    ro.opsForHash().put("auths", "auth_" + action.getId(), action);
-                });
-                return null;
-            }
-        });
+//        List<UserAuth> auths = userAuthMapper.selectList(null);
+//
+//        redisTemplate.executePipelined(new SessionCallback() {
+//            @Override
+//            public Object execute(RedisOperations ro) throws DataAccessException {
+//                auths.forEach(action -> {
+////                    ro.opsForHash().put("auths", "auth_" + action.getId(), action);
+//                });
+//                return null;
+//            }
+//        });
     }
 }
 
